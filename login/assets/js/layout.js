@@ -1,4 +1,3 @@
-// assets/js/layout.js
 document.addEventListener("DOMContentLoaded", () => {
   async function loadComponent(placeholderId, filePath) {
     try {
