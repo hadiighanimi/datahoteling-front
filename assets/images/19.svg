@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="42.661" height="50.671" viewBox="0 0 42.661 50.671">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.114" y1="0.101" x2="0.09" y2="0.904" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.302"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="domain-hover" transform="translate(1 1)">
+    <g id="Group">
+      <path id="Oval" d="M20.324,0A20.324,20.324,0,1,1,0,20.324,20.324,20.324,0,0,1,20.324,0Z" transform="translate(0.013 8.01)" fill="url(#linear-gradient)"/>
+      <path id="Oval-2" data-name="Oval" d="M20.324,0A46.957,46.957,0,0,1,31.951,1.386c5.131,1.31,8.7,3.66,8.7,6.327,0,4.26-9.1,7.713-20.324,7.713S0,11.972,0,7.713C0,5.3,2.925,3.142,7.792,1.64A44.3,44.3,0,0,1,20.324,0Z" transform="translate(0.013 20.622)" fill="#16c3d9"/>
+      <path id="Path" d="M5.16,26.933c0-4.283,9.069-7.713,20.337-7.713s20.324,3.492,20.324,7.713" transform="translate(-5.16 1.402)" fill="none" stroke="#9cffff" stroke-width="2" opacity="0.4"/>
+      <path id="Path-2" data-name="Path" d="M22.923,49.841c-4.283,0-7.713-9.069-7.713-20.337S18.639,9.18,22.923,9.18" transform="translate(-2.586 -1.17)" fill="none" stroke="#9cffff" stroke-width="2" opacity="0.4"/>
+      <path id="Path-3" data-name="Path" d="M45.821,25.36c0,3.2-5.067,5.93-12.633,7.147a49.794,49.794,0,0,1-7.691.565c-11.267,0-20.337-3.429-20.337-7.713" transform="translate(-5.16 2.974)" fill="none" stroke="#9cffff" stroke-width="2"/>
+      <path id="Path-4" data-name="Path" d="M21.35,9.18c4.283,0,7.713,9.057,7.713,20.324S25.633,49.841,21.35,49.841" transform="translate(-1.013 -1.17)" fill="none" stroke="#9cffff" stroke-width="2"/>
+      <circle id="Oval-3" data-name="Oval" cx="20.324" cy="20.324" r="20.324" transform="translate(0.013 8.01)" fill="none" stroke="#9cffff" stroke-width="2"/>
+      <g id="Group_76" data-name="Group 76" transform="translate(11.632)">
+        <path id="Path-5" data-name="Path" d="M31.817,11.178c0,6.494-8.692,12.863-8.692,12.863s-8.7-6.62-8.7-12.863a8.7,8.7,0,0,1,17.4,0Z" transform="translate(-14.42 -2.803)" fill="#16c3d9" stroke="#fff" stroke-width="2"/>
+        <path id="Oval-4" data-name="Oval" d="M2.939,0A2.939,2.939,0,1,1,0,2.939,2.939,2.939,0,0,1,2.939,0Z" transform="translate(5.766 5.561)" fill="none" stroke="#fff" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+</svg>

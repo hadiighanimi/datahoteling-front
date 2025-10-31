@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21.771" height="27.946" viewBox="0 0 21.771 27.946">
+  <defs>
+    <linearGradient id="linear-gradient" x1="-0.125" y1="0.569" x2="1" y2="0.569" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.302"/>
+      <stop offset="0.36" stop-color="#fff" stop-opacity="0.2"/>
+      <stop offset="1" stop-color="#009dff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_376" data-name="Group 376" transform="translate(0.75 0.75)">
+    <g id="dbicon">
+      <ellipse id="Oval" cx="10.132" cy="4.802" rx="10.132" ry="4.802" transform="translate(0.007)" fill="#0a4461" stroke="#fff" stroke-width="1.5"/>
+      <path id="Path" d="M7.3,9.74v5.633c0,2.676,4.541,4.8,10.139,4.8s10.132-2.147,10.132-4.8V9.74" transform="translate(-7.3 -4.938)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      <g id="Group" transform="translate(7.651 9.597)">
+        <path id="Path-2" data-name="Path" d="M20.654,16.55Z" transform="translate(-18.167 -16.55)" stroke="#fff" stroke-width="1.5" fill="url(#linear-gradient)"/>
+        <line id="Path-3" data-name="Path" x2="2.83" transform="translate(1.073 2.795)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      </g>
+      <g id="Group-2" data-name="Group" transform="translate(0 10.428)">
+        <path id="Path-4" data-name="Path" d="M27.571,17.73v5.583c0,2.676-4.541,4.823-10.132,4.823S7.3,26.024,7.3,23.313V17.73c0,2.676,4.541,4.8,10.139,4.8S27.571,20.384,27.571,17.73Z" transform="translate(-7.3 -17.73)" fill="#0a4461" stroke="#fff" stroke-width="1.5"/>
+        <line id="Path-5" data-name="Path" x2="2.83" transform="translate(8.724 7.625)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      </g>
+      <g id="Group-3" data-name="Group" transform="translate(0 16.011)">
+        <path id="Path-6" data-name="Path" d="M27.571,25.66v5.633c0,2.676-4.541,4.8-10.132,4.8S7.3,33.982,7.3,31.293V25.66c0,2.676,4.541,4.823,10.139,4.823S27.571,28.336,27.571,25.66Z" transform="translate(-7.3 -25.66)" fill="#0a4461" stroke="#fff" stroke-width="1.5"/>
+        <line id="Path-7" data-name="Path" x2="2.83" transform="translate(8.724 7.646)" fill="none" stroke="#fff" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>

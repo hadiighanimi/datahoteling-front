@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تماس با ما | دیتاهتلینگ</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <style>
+      body,
+      html {
+        margin: 0;
+        font-family: "Vazirmatn", sans-serif;
+      }
+
+      .contact-container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 40px 20px;
+      }
+
+      .contact-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 50px 60px;
+        width: 100%;
+        max-width: 1200px;
+        box-shadow: 0 0 35px rgba(0, 0, 0, 0.45);
+        animation: fadeIn 0.6s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .contact-header {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+
+      .contact-header h1 {
+        color: #00b4ff;
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-header p {
+        color: #ccc;
+        font-size: 1rem;
+      }
+
+      /* FLEX layout for info and form */
+      .contact-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+      /* اطلاعات تماس */
+      .info-section {
+        flex: 1;
+        min-width: 360px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .info-box {
+        width: 48%;
+        background: rgba(255, 255, 255, 0.07);
+        border-radius: 14px;
+        padding: 18px 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        transition: 0.3s;
+      }
+
+      .info-box i {
+        font-size: 22px;
+        color: #00b4ff;
+        margin-top: 4px;
+      }
+
+      .info-box div {
+        color: #e4e4e4;
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+      .info-box a {
+        color: #e4e4e4 !important;
+        text-decoration: none;
+      }
+      .info-box a:hover {
+        color: #a2eef0 !important;
+      }
+
+      .info-box:hover {
+        background: rgba(255, 255, 255, 0.12);
+        transform: translateY(-3px);
+      }
+
+      .map-box {
+        border-radius: 12px;
+        overflow: hidden;
+        margin-top: 35px;
+      }
+
+      @media (max-width: 900px) {
+        .contact-flex {
+          flex-direction: column;
+        }
+        .contact-card {
+          padding: 35px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-main">
+      <div id="nav-bar-placeholder"></div>
+      <div class="dashboard-container">
+        <div id="sidebar-placeholder"></div>
+
+        <main class="content-area">
+          <div class="contact-container">
+            <section class="contact-card">
+              <div class="contact-header">
+                <h1><i class="fas fa-headset"></i> تماس با ما</h1>
+                <p>
+                  برای هرگونه سؤال یا پشتیبانی، با تیم دیتاهتلینگ در ارتباط
+                  باشید.
+                </p>
+              </div>
+
+              <div class="contact-flex">
+                <!-- اطلاعات تماس -->
+                <div class="info-section">
+                  <div class="info-box">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                      <strong>تلفن پشتیبانی:</strong><br />
+                      <a href="tel:02122841589">021-22841589</a><br />
+                      <a href="tel:02122891940">021-22891940</a><br />
+                      <a href="tel:02122896293">021-22896293</a>
+                    </div>
+                  </div>
+
+                  <div class="info-box">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                      <strong>ایمیل:</strong><br />
+                      <a href="mailto:datahoteling@gmail.com"
+                        >datahoteling@gmail.com</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="info-box">
+                    <i class="fab fa-telegram-plane"></i>
+                    <div>
+                      <strong>پشتیبانی تلگرام:</strong><br />
+                      <a href="tel:09397729303" style="color: black"
+                        >09397729303</a
+                      >
+                      <br />
+                      <a href="tel:09055995697" style="color: black"
+                        >09055995697</a
+                      >
+                    </div>
+                  </div>
+
+                  <div class="info-box">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                      <strong>آدرس:</strong><br />
+                      تهران، پاسداران، نگارستان چهارم، پلاک ۴، طبقه دوم
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="map-box">
+                <iframe
+                  src="https://www.google.com/maps?q=35.75574944879349,51.45518456606479&hl=fa&z=16&output=embed"
+                  width="100%"
+                  height="300"
+                  style="border: 0"
+                  allowfullscreen
+                  loading="lazy"
+                ></iframe>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="./assets/js/layout.js"></script>
+  </body>
+</html>

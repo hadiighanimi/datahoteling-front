@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet" />
+
+    <title>Datahoteling</title>
+
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <style>
+      .card {
+        background-color: #fbf6e2;
+        border-radius: 40px;
+      }
+
+      .card h3 {
+        font-size: 15px;
+        color: #0c2548;
+      }
+
+      .card:hover,
+      .card:focus,
+      .card:active,
+      .card:visited {
+        transition-timing-function: cubic-bezier(0.6, 4, 0.3, 0.8);
+        animation: gelatine 0.5s 1;
+      }
+
+      @keyframes gelatine {
+        0%,
+        100% {
+          transform: scale(1, 1);
+        }
+
+        25% {
+          transform: scale(0.9, 1.1);
+        }
+
+        50% {
+          transform: scale(1.1, 0.9);
+        }
+
+        75% {
+          transform: scale(0.95, 1.05);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="bg-shapes">
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
+    </div>
+    <div class="container">
+      <div style="height: 60px" class="row">
+        <div class="topbar d-flex align-items-center">
+          <div
+            class="container d-flex justify-content-between justify-content-md-between align-items-center hamburger">
+            <div class="contact-info d-none d-xl-flex align-items-center">
+              <!-- <img src="assets/images/Screenshot.png" alt="" style="width: 200px;"> -->
+              <p
+                style="font-size: 30px; color: #fbf6e2"
+                class="d-none d-xl-block">
+                Data Hotelling
+              </p>
+            </div>
+            <i
+              class="mobile-nav-toggle d-xl-none bi bi-list header-toggle"
+              style="color: #fbf6e2"></i>
+            <div class="social-links d-md-flex align-items-center">
+              <button class="btn-z"><span>ورود/ثبت نام</span></button>
+            </div>
+          </div>
+        </div>
+        <!-- End Top Bar -->
+      </div>
+    </div>
+    <!-- SINGLE NAVIGATION HEADER -->
+   <header id="header" class="header d-flex flex-column">
+      <div class="branding d-flex align-items-cente container">
+        <div
+          class="container position-relative d-flex align-items-center justify-content-between">
+          <nav id="navmenu" class="navmenu w-100">
+            <div class="nav-links w-100">
+              <nav id="navmenu navbar-expand-lg" class="navmenu">
+                <ul class="ms-auto">
+                  <li>
+                    <a href="index.html" class="index">صفحه اصلی</a>
+                  </li>
+                  <li>
+                    <a href="product.html" class="product">هاست ها</a>
+                    <div class="hosts__nav">
+                      <ul>
+                        <li>
+                          <a href>هاست اشتراکی</a>
+                        </li>
+                        <li>
+                          <a href>هاست اختصاصی</a>
+                        </li>
+                        <li>
+                          <a href>vps</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li><a href="domain.html" class="domain">دامنه</a></li>
+                  <li><a class="server">سرور</a></li>
+                  <li><a href="callus.html" class="callus">پشتیبانی</a></li>
+                  <li><a href="about.html" class="about">درباره ما</a></li>
+                </ul>
+              </nav>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active" style="direction: ltr">
+      <div class="container">
+        <div class="content-wrapper">
+          <section class="features">
+            <div class="feature-box feature-box-bottom">
+              <!-- four -->
+              <div class="feature-card-k glass">
+                <h3>اختصاصی</h3>
+                <div class="feature-icon">
+                  <img src="assets/images/12.svg" alt />
+                </div>
+
+                <p>
+                  شامل یک دامنه رایگان و ایمیل برای مطابقت<br />
+                  (با طرح 12 ماهه).
+                </p>
+                <br />
+                <br />
+                <ul>
+                  <li>4 گیگابایت حافظه</li>
+                  <li>پردازنده 2 هسته ای</li>
+                  <li>هارد 0.5 ترابایتی</li>
+                  <li>پهنای باند 10 ترابایت</li>
+                </ul>
+                <button class="btn">خرید کنید</button>
+              </div>
+
+              <!-- five -->
+              <div class="feature-card-k glass">
+                <h3>VPS</h3>
+                <div class="feature-icon">
+                  <img src="assets/images/12.svg" alt />
+                </div>
+
+                <p>
+                  شامل یک دامنه رایگان و ایمیل برای مطابقت <br />(با طرح 12
+                  ماهه).
+                </p>
+                <br />
+                <br />
+                <ul>
+                  <li>2 گیگابایت رم</li>
+                  <li>پردازنده 2 هسته ای</li>
+                  <li>120 گیگابایت فضای هارد</li>
+                  <li>پهنای باند 1.5 ترابایت</li>
+                </ul>
+                <button class="btn">خرید کنید</button>
+              </div>
+
+              <!-- six -->
+              <div class="feature-card-k glass">
+                <h3>اشتراکی</h3>
+                <div class="feature-icon">
+                  <img src="assets/images/12.svg" alt />
+                </div>
+                <p>
+                  شامل یک دامنه رایگان و ایمیل برای مطابقت <br />(با طرح 12
+                  ماهه).
+                </p>
+                <br />
+                <br />
+                <ul>
+                  <li>تک دامنه</li>
+                  <li>نصب آسان</li>
+                  <li>پهنای باند نامحدود</li>
+                  <li>گواهی SSL</li>
+                </ul>
+                <button class="btn">خرید کنید</button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- SINGLE FOOTER -->
+    <div id="footer">
+      <div class="container">
+        <footer class="glass" style="background-color: #3481b523">
+          <div class="footer-content row">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+              <div id="nav_menu-1" class="widget widget_nav_menu">
+                <h3 class="widget-title">خدمات ما</h3>
+                <div class="menu-company-container">
+                  <ul id="menu-our-services" class="menu">
+                    <li
+                      id="menu-item-233"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233">
+                      <a href="http://hostiko.mehrwebdesign.com/hosting-2/">هاست
+                        اشتراکی</a>
+                    </li>
+                    <li
+                      id="menu-item-232"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/reseller-hosting/">نمایندگی
+                        هاست</a>
+                    </li>
+                    <li
+                      id="menu-item-234"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234">
+                      <a href="http://hostiko.mehrwebdesign.com/vps/">سرور
+                        مجازی</a>
+                    </li>
+                    <li
+                      id="menu-item-231"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/layout-2-dedicated-hosting/">سرور
+                        اختصاصی</a>
+                    </li>
+                    <li
+                      id="menu-item-239"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239">
+                      <a href="http://hostiko.mehrwebdesign.com/domain/">ثبت
+                        دامنه</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+              <div class="widget widget_nav_menu">
+                <h3 class="widget-title">دسترسی سریع</h3>
+                <div class="menu-company-container">
+                  <ul id="menu-legal" class="menu">
+                    <li
+                      id="menu-item-240"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/contact-us/">تماس
+                        با ما</a>
+                    </li>
+                    <li
+                      id="menu-item-241"
+                      class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241">
+                      <a
+                        target="_blank"
+                        href="/portal/submitticket.php?step=2&deptid=1">ارسال
+                        تیکت</a>
+                    </li>
+                    <li
+                      id="menu-item-236"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/terms-conditions/">قوانین
+                        و مقررات</a>
+                    </li>
+                    <li
+                      id="menu-item-237"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/privacy-policy/">حریم
+                        خصوصی</a>
+                    </li>
+                    <li
+                      id="menu-item-238"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238">
+                      <a
+                        href="http://hostiko.mehrwebdesign.com/acceptable-use-policy/">درباره
+                        ما</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+              <div id="text-2" class="widget widget_text">
+                <h3 class="widget-title">تماس با ما</h3>
+                <div class="textwidget">
+                  <ul class="address-box">
+                    <li>
+                      <span>آدرس :</span>
+                      <br />
+                      تهران، پاسداران ، نگارستان چهارم، پلاک 4، طبقه دوم
+                    </li>
+                    <li>
+                      <a
+                        href="mailto:info@datahoteling.com">info@datahoteling.com</a>
+                    </li>
+                    <li>
+                      <a href="tel:02122841589">021-22841589</a> <br />
+                      <a href="tel:02122891940">021-22891940</a> <br />
+                      <a href="tel:02122896293">021-22896293</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="col-xs-12 col-sm-6 col-md-6 col-lg-3"
+              style="align-items: center !important">
+              <img src="assets/images/110.png" style="width: 150px" alt />
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <div class="hamburger-container">
+      <div class="hamburger-menu">
+        <div>
+          <div class="hamburger-title">
+            <p>Data Hotelling</p>
+          </div>
+          <nav class="hamburger-nav">
+            <ul>
+              <li>
+                <a href="index.html" class="index">
+                  صفحه اصلی
+                  <img src="./assets/images/svg/home.svg" alt />
+                </a>
+              </li>
+              <li>
+                <a class="product">
+                  <span>
+                    هاست ها
+                    <img
+                      src="assets/images/svg/arrow-down-s-line.svg"
+                      class="hamburger-icon" />
+                  </span>
+                  <img src="./assets/images/svg/svgexport-30.svg" alt />
+                </a>
+                <div class="hamburger-sub">
+                  <ul>
+                    <li>
+                      <a href>هاست اشتراکی</a>
+                    </li>
+                    <li>
+                      <a href>هاست اختصاصی</a>
+                    </li>
+                    <li>
+                      <a href>هاست یادم نمیاد</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a class="server">
+                  سرور
+                  <img src="./assets/images/svg/svgexport-31.svg" alt />
+                </a>
+              </li>
+              <li>
+                <a href="domain.html" class="domain">
+                  دامنه
+                  <img src="./assets/images/svg/svgexport-20.svg" alt />
+                </a>
+              </li>
+              <li>
+                <a href="callus.html" class="callus">
+                  پشتیبانی
+                  <img src="./assets/images/svg/svgexport-40.svg" alt />
+                </a>
+              </li>
+              <li>
+                <a href="about.html" class="about">
+                  درباره ما
+                  <img src="./assets/images/svg/svgexport-18.svg" alt />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="bye__host">
+          <div class="hamburger__btn">
+            <div class="hamburger__btn--container">
+              <div style="width: 0%"></div>
+              <button>
+                تخفیف
+                <div>
+                  <img src="./assets/images/svg/svgexport-11.svg" alt />
+                </div>
+              </button>
+            </div>
+            <div class="hamburger__btn--container">
+              <div style="width: 0%"></div>
+              <button>تخفیف2</button>
+            </div>
+          </div>
+          <div class="hamburger__btn--container btnB">
+            <div style="width: 0%"></div>
+            <button>
+              خرید هاست
+              <div>
+                <img src="./assets/images/svg/svgexport-9.svg" alt />
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/index.js"></script>
+  </body>
+</html>

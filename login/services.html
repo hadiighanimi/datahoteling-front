@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>داشبورد</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="./ticket.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container-main">
+      <div id="nav-bar-placeholder"></div>
+
+      <div class="dashboard-container">
+        <div id="sidebar-placeholder"></div>
+        <main class="content-area">
+          <h1 class="page-title">مدیریت سرویس‌های من</h1>
+          <p class="page-description">
+            لیست کامل هاست‌ها، سرورها و دامنه‌های خریداری شده.
+          </p>
+
+          <div class="card dark-theme">
+            <div class="toggle-buttons-container">
+              <button class="toggle-btn active" data-target="#hosts-content">
+                هاست‌ها
+              </button>
+              <button class="toggle-btn" data-target="#servers-content">
+                سرورها
+              </button>
+              <button class="toggle-btn" data-target="#domains-content">
+                دامنه‌ها
+              </button>
+            </div>
+            <div class="service-content-tab active-content" id="hosts-content">
+              <div class="table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>نام سرویس</th>
+                      <th>تاریخ خرید</th>
+                      <th>تاریخ انقضا</th>
+                      <th>اعتبار باقی‌مانده (روز)</th>
+                      <th>وضعیت</th>
+                      <th>عملیات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="hosts-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="service-content-tab" id="servers-content">
+              <div class="table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>نام سرویس</th>
+                      <th>تاریخ خرید</th>
+                      <th>تاریخ انقضا</th>
+                      <th>اعتبار باقی‌مانده (روز)</th>
+                      <th>وضعیت</th>
+                      <th>عملیات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="servers-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="service-content-tab" id="domains-content">
+              <div class="table-container">
+                <table class="data-table">
+                  <thead>
+                    <tr>
+                      <th>نام دامنه</th>
+                      <th>تاریخ خرید</th>
+                      <th>تاریخ انقضا</th>
+                      <th>اعتبار باقی‌مانده (روز)</th>
+                      <th>وضعیت</th>
+                      <th>عملیات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="domains-table-body"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="./assets/js/services.js"></script>
+    <script src="./assets/js/layout.js"></script>
+  </body>
+</html>

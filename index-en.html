@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+
+    <title>Datahoteling</title>
+
+    <link rel="stylesheet" href="assets/css/main.css">
+
+
+</head>
+<style>
+   .feature-card-k ul li {
+    direction: ltr;
+    }
+</style>
+
+<body style="direction: ltr;">
+    <!-- <div class="bg-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div> -->
+    <div style=" height: 60px; margin-top: 25px; direction: rtl;" class="row">
+
+        <div class="topbar d-flex align-items-center">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+                <div class="contact-info d-flex align-items-center">
+
+                    <!-- <img src="assets/images/Screenshot.png" alt="" style="width: 200px;"> -->
+                    <p style="font-size: 30px; color: #fbf6e2; " class="d-none d-lg-block">Data Hotelling</p>
+                </div>
+                <i class="mobile-nav-toggle d-lg-none bi bi-list header-toggle"
+                    style="color:#fbf6e2; margin-left: 60%; margin-top: 20px;"></i>
+                    <div class="contact-info d-flex align-items-center">
+                        <label class="switch"><a href="en.html"></a>
+                            <input class="checkbox" type="checkbox" id="langSwitch" />
+                            <span class="slider round"></span>
+                          </label>
+                          
+                    </div>
+                <div class="social-links d-md-flex align-items-center">
+                    <button class="btn-z"><span>login / signin</span></button>
+                </div>
+            </div>
+        </div><!-- End Top Bar -->
+    </div>
+    <script>
+        const langSwitch = document.getElementById("langSwitch");
+      
+        // بررسی اینکه کاربر الان توی کدوم صفحه‌ست
+        let currentPage = window.location.href.includes("index-fa.html") ? "fa" : "en";
+      
+        // اگه توی فارسیه، سوییچ رو روشن کن
+        if (currentPage === "fa") {
+          langSwitch.checked = true;
+        }
+      
+        langSwitch.addEventListener("change", function () {
+          // فقط لینک رو عوض کن (بدون رفرش اجباری تا وقتی دوباره نخواد)
+          const newLang = this.checked ? "fa" : "en";
+          const newPage = newLang === "fa" ? "index-fa.html" : "index-en.html";
+      
+          // انتقال به صفحه جدید
+          window.location.href = newPage;
+        });
+      </script>
+    <header id="header" class="header d-flex flex-column">
+
+        <div class="branding d-flex align-items-cente container">
+
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+
+                <nav id="navmenu" class="navmenu">
+
+
+                    <div class="nav-links">
+                        <nav id="navmenu navbar-expand-lg" class="navmenu ">
+                            <ul class="ms-auto" style="direction: ltr;padding-left: 60px;">
+                                <li> <a href="#">hosting</a></li>
+                                <li> <a href="product.html">server</a></li>
+                                <li> <a href="#">domain</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li> <a href="about.html">about us</a></li>
+                            </ul>
+                        </nav> 
+
+                    </div>
+            </div>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="home" class="page active" style="direction: ltr;">
+        <div class="container">
+            <div class="content-wrapper">
+                <section class="hero glass">
+                   
+                    <div class="hero-content">
+                        <h1 style="direction: ltr;">Catch the domain. Own the data. Rule the future.
+                        </h1>
+
+                        <p style="direction: ltr;">
+                            In today’s era of digital transformation, data and virtual assets have emerged as some of the most valuable economic resources. Data Hotelling is dedicated to providing a reliable, accurate, and specialized platform for buying and selling unique data sets and high-value domains.
+
+We firmly believe that access to precise, rare, and verified information is the key to unlocking strategic decisions and creating unparalleled opportunities for individuals and organizations alike. Our mission is to empower our clients with the insights they need to thrive in a rapidly evolving digital economy.
+
+By bridging the gap between valuable digital assets and those who can leverage them, Data Hotelling opens doors to innovation, growth, and competitive advantage.
+                        </p>
+                        <a href="#" class="cta-button">serch</a>
+                    </div>
+                    <div class="hero-image">
+                        <img src="assets/images/image (1).png" alt="Modern Technology Interaction" />
+                    </div>
+                </section>
+
+                <div class="container" style="align-items: center;">
+
+                    <img src="assets/images/word.webp" alt="" style="width: 80%; margin-left: 10%;
+                            margin-bottom: 5%;">
+                </div>
+
+                <section class="features" >
+                    <div class="feature-card glass">
+                        <div class="feature-icon"><img src="assets/images/14.svg" alt=""></div>
+                        <h3>Cloud Services</h3>
+                        <p style="direction: ltr;">
+                            Go beyond limits with the cloud.
+Fast, flexible, and built to grow with you our next-gen cloud hosting gives your website or app the power it deserves.
+Enjoy lightning-fast performance, seamless scalability, and always-on reliability so you can focus on what truly matters:
+<br> your success.
+                        </p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon"><img src="assets/images/13.svg" alt=""></div>
+                        <h3>VPS</h3>
+                        <p style="direction: ltr; text-align: justify;">
+                            Power. Control. Freedom all in your hands.
+                            Experience the next level of performance with our Virtual Private Servers (VPS) built for speed, security, and full flexibility.
+                            Get dedicated resources, complete control, and cloud-level reliability to run your websites, apps, or business projects without limits.
+                            <br>
+                            Your server, your rules simple as that.
+                        </p>
+                    </div>
+
+                    <div class="feature-card glass">
+                        <div class="feature-icon"><img src="assets/images/15.svg" alt="" style="width: 80px;"></div>
+                        <h3>Dedicated Server</h3>
+                        <p style="direction: ltr;">
+                            
+                            Dedicated power for serious performance.
+                            Take full control with our Dedicated Servers built for maximum speed, reliability, and security.
+                            Enjoy exclusive resources, enterprise-grade hardware, and complete freedom to customize your environment your way.
+                            <br>
+                            No sharing. No limits. Just pure performance.
+                        </p>
+
+                    </div>
+
+                    <div class="feature-card-k glass">
+                        <h3>perfesional</h3>
+                        <div class="feature-icon"><img src="assets/images/12.svg" alt=""></div>
+                        <p style="direction: ltr;">Includes a free domain and matching email<br> (with the 12-month plan).</p>
+                        <br>
+                        <br>
+                        <ul style="direction: ltr;">
+                            <li>4 GB RAM</li>
+                            <li>2-Core CPU</li>
+                            <li>0.5 TB Storage</li>
+                            <li>10 TB Bandwidth</li>
+                        </ul>
+                        <button class="btn">Buy Now</button>
+                                            </div>
+
+                    <div class="feature-card-k glass">
+                        <h3>VPS</h3>
+                        <div class="feature-icon"><img src="assets/images/12.svg" alt=""></div>
+
+                        <p style="direction: ltr;">Includes a free domain and matching email <br>(with the 12-month plan).</p>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>2 GB RAM</li>
+                            <li>2-Core CPU</li>
+                            <li>120 GB Storage</li>
+                            <li>1.5 TB Bandwidth</li>
+                        </ul>
+                        <button class="btn">Buy Now</button>
+                        
+                    </div>
+
+                    <div class="feature-card-k glass">
+                        <h3>Shared Hosting</h3>
+                        <div class="feature-icon"><img src="assets/images/12.svg" alt=""></div>
+                        <p style="direction: ltr;">Includes a free domain and matching email <br>(with the 12-month plan).</p>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Single Domain</li>
+                            <li>Easy Installation</li>
+                            <li>Unlimited Bandwidth</li>
+                            <li>SSL Certificate</li>
+                        </ul>
+                        <button class="btn">Buy Now</button>
+                        
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SINGLE FOOTER -->
+    <div id="footer">
+        <div class="container">
+            <footer class="glass" style="background-color: #3481b523 ;">
+                <div class="footer-content row">
+
+
+                    <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div id="nav_menu-1" class="widget widget_nav_menu">
+                            <h3 class="widget-title">خدمات ما</h3>
+                            <div class="menu-company-container">
+                                <ul id="menu-our-services" class="menu">
+                                    <li id="menu-item-233"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-233">
+                                        <a href="http://hostiko.mehrwebdesign.com/hosting-2/">هاست اشتراکی</a>
+                                    </li>
+                                    <li id="menu-item-232"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-232">
+                                        <a href="http://hostiko.mehrwebdesign.com/reseller-hosting/">نمایندگی هاست</a>
+                                    </li>
+                                    <li id="menu-item-234"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-234">
+                                        <a href="http://hostiko.mehrwebdesign.com/vps/">سرور مجازی</a>
+                                    </li>
+                                    <li id="menu-item-231"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-231">
+                                        <a href="http://hostiko.mehrwebdesign.com/layout-2-dedicated-hosting/">سرور
+                                            اختصاصی</a>
+                                    </li>
+                                    <li id="menu-item-239"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-239">
+                                        <a href="http://hostiko.mehrwebdesign.com/domain/">ثبت دامنه</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div id="nav_menu-1" class="widget widget_nav_menu">
+                            <h3 class="widget-title">دسترسی سریع</h3>
+                            <div class="menu-company-container">
+                                <ul id="menu-legal" class="menu">
+                                    <li id="menu-item-240"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-240">
+                                        <a href="http://hostiko.mehrwebdesign.com/contact-us/">تماس با ما</a>
+                                    </li>
+                                    <li id="menu-item-241"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-241"><a
+                                            target="_blank" href="/portal/submitticket.php?step=2&deptid=1">ارسال
+                                            تیکت</a></li>
+                                    <li id="menu-item-236"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-236">
+                                        <a href="http://hostiko.mehrwebdesign.com/terms-conditions/">قوانین و مقررات</a>
+                                    </li>
+                                    <li id="menu-item-237"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-237">
+                                        <a href="http://hostiko.mehrwebdesign.com/privacy-policy/">حریم خصوصی</a>
+                                    </li>
+                                    <li id="menu-item-238"
+                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-238">
+                                        <a href="http://hostiko.mehrwebdesign.com/acceptable-use-policy/">درباره ما</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-3">
+                        <div id="text-2" class="widget widget_text">
+                            <h3 class="widget-title">تماس با ما</h3>
+                            <div class="textwidget">
+                                <ul class="address-box">
+                                    <li><span>آدرس :</span>
+                                        <br>
+                                        تهران، پاسداران ، نگارستان چهارم، پلاک 4، طبقه دوم
+                                    </li>
+                                    <li>
+
+                                        <a href="mailto:info@datahoteling.com">info@datahoteling.com</a>
+                                    </li>
+                                    <li>
+
+                                        <a href="tel:02122841589">021-22841589</a> <br>
+                                        <a href="tel:02122891940">021-22891940</a> <br>
+                                        <a href="tel:02122896293">021-22896293</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class=" col-xs-12 col-sm-6 col-md-6 col-lg-3" style="align-items: center !important;">
+                        <img src="assets/images/110.png" style="width: 150px;" alt="">
+                    </div>
+
+
+
+
+                </div>
+                <div class="copyright">
+
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="templatemo-glossy-touch.js"></script>
+    <script src="assets/js/menu.js"></script>
+    <script src="assets/js/d.js"></script>
+</body>
+
+</html>

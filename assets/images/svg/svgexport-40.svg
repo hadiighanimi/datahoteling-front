@@ -1,0 +1,12 @@
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" fill="#0f3360" viewBox="0 0 24 24" data-name="Line Color"
+    xmlns="http://www.w3.org/2000/svg" class="icon line-color" width="64" height="64">
+    <g fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.6px">
+        <path d="M4 14l-.19-2A8.23 8.23 0 0112 3h0a8.23 8.23 0 018.19 9L20 14" stroke="#0f3360" fill="none"
+            stroke-width="0.6px"></path>
+        <path data-name="secondary" d="M17 17v1a1.89 1.89 0 01-1.75 2H12" stroke="#0f3360" fill="none"
+            stroke-width="0.6px"></path>
+        <path
+            d="M4 14v-1a3 3 0 013-3h1a1 1 0 011 1v5a1 1 0 01-1 1H7a3 3 0 01-3-3zm16 0v-1a3 3 0 00-3-3h-1a1 1 0 00-1 1v5a1 1 0 001 1h1a3 3 0 003-3z"
+            stroke="#0f3360" fill="none" stroke-width="0.6px"></path>
+    </g>
+</svg>
