@@ -1,114 +1,636 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>data service</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ورود و ثبت‌نام | Data Hoteling</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  </head>
+  <style>
+    :root {
+      --primary: #3050a9;
+      --secondary: #5dc2d9;
+      --dark: #0f3360;
+      --light: #f4f4f9;
+      --card-bg: rgba(255, 255, 255, 0.96);
+      --border: #d0d0d0;
+      --focus: 0 0 0 3px rgba(93, 194, 217, 0.3);
+      --error: #e74c3c;
+      --success: #27ae60;
+      --text: #2d3748;
+      --muted: #718096;
+      --tab-bg: #e2e8f0;
+      --tab-active: white;
+    }
 
-  <body>
-    <div class="bg-shapes">
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
+    @font-face {
+      font-family: kolo;
+      src: url(../font/koloche/Koloche.WOL_p30download.com.otf);
+      src: url(../font/koloche/Koloche.WOL_p30download.com.ttf);
+      src: url(../font/koloche/Koloche.WOL_p30download.com.woff);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Vazirmatn', kolo, sans-serif;
+      background: linear-gradient(135deg,
+          #0f3360 0%,
+          #5dc2d9 15%,
+          #3050a9 35%,
+          #0f3360 50%,
+          #3a717d 70%,
+          #5a898c 85%,
+          #70b2de 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+      direction: rtl;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      color: var(--text);
+      position: relative;
+    }
+
+    /* Animated background shapes */
+    .bg-shapes {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .shape {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.08);
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 8px 28px rgba(255, 255, 255, 0.484);
+    }
+
+    .shape:nth-child(1) {
+      width: 120px;
+      height: 80px;
+      border-radius: 15px;
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+      transform: rotate(15deg);
+    }
+
+    .shape:nth-child(2) {
+      width: 90px;
+      height: 140px;
+      border-radius: 12px;
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+      transform: rotate(-20deg);
+    }
+
+    .shape:nth-child(3) {
+      width: 100px;
+      height: 60px;
+      border-radius: 10px;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 4s;
+      transform: rotate(25deg);
+    }
+
+    .shape:nth-child(4) {
+      width: 80px;
+      height: 120px;
+      border-radius: 8px;
+      top: 10%;
+      right: 30%;
+      animation-delay: 1s;
+      transform: rotate(-10deg);
+    }
+
+    .shape:nth-child(5) {
+      width: 110px;
+      height: 70px;
+      border-radius: 14px;
+      bottom: 40%;
+      right: 20%;
+      animation-delay: 3s;
+      transform: rotate(30deg);
+    }
+
+    .shape:nth-child(6) {
+      width: 95px;
+      height: 95px;
+      border-radius: 20px;
+      top: 40%;
+      left: 5%;
+      animation-delay: 5s;
+      transform: rotate(-15deg);
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(var(--start-rotation, 0deg));
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(calc(var(--start-rotation, 0deg) + 180deg));
+      }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: rgba(60, 251, 251, 0.527);
+      border-radius: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: rgba(60, 251, 251, 0.8);
+    }
+
+    /* Card */
+    .card {
+      width: 100%;
+      max-width: 460px;
+      background: var(--card-bg);
+      border-radius: 24px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-header {
+      text-align: center;
+      padding: 32px 32px 0;
+    }
+
+    .card-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      background-clip: text;
+      -webkit-background-clip: text;
+      -moz-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .card-header p {
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* Tabs */
+    .tabs {
+      margin: 24px 32px 16px;
+      display: flex;
+      background: var(--tab-bg);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid #cbd5e0;
+    }
+
+    .tab {
+      flex: 1;
+      text-align: center;
+      padding: 14px 0;
+      cursor: pointer;
+      font-weight: 600;
+      z-index: 2;
+      position: relative;
+      color: var(--text);
+      transition: color 0.3s ease;
+    }
+
+    .tab.active {
+      color: var(--tab-active);
+    }
+
+    .indicator {
+      position: absolute;
+      top: 6px;
+      bottom: 6px;
+      right: 6px;
+      width: calc(50% - 12px);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 12px;
+      transition: right 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      z-index: 1;
+      box-shadow: 0 4px 15px rgba(48, 80, 169, 0.3);
+    }
+
+    .tab[data-tab="signup"].active~.indicator {
+      right: calc(50% + 6px);
+    }
+
+    /* Forms */
+    .forms {
+      padding: 0 32px 32px;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    form.active {
+      display: flex;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .field {
+      position: relative;
+      height: 58px;
+    }
+
+    .field input {
+      width: 100%;
+      height: 100%;
+      padding: 16px 50px 0 16px;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      background: var(--light);
+      font-size: 1rem;
+      text-align: right;
+      transition: all 0.3s ease;
+    }
+
+    .field input:focus {
+      border-color: var(--primary);
+      box-shadow: var(--focus);
+      background: white;
+    }
+
+    .field label {
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      pointer-events: none;
+      background: var(--card-bg);
+      padding: 0 6px;
+    }
+
+    .field input:focus+label,
+    .field input:not(:placeholder-shown)+label {
+      top: 10px;
+      font-size: 0.75rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .field i {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+    }
+
+    .password-toggle {
+      cursor: pointer;
+    }
+
+    .password-toggle:hover {
+      color: var(--primary);
+    }
+
+    .submit button {
+      width: 100%;
+      height: 58px;
+      background: linear-gradient(90deg, var(--primary), #4a68b5);
+      color: white;
+      font-weight: 700;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 20px rgba(48, 80, 169, 0.3);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .submit button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: 0.6s;
+    }
+
+    .submit button:hover::before {
+      left: 100%;
+    }
+
+    .submit button:hover {
+      transform: translateY(-3px);
+    }
+
+    #msg {
+      padding: 0 32px 16px;
+      min-height: 40px;
+      text-align: center;
+    }
+
+    .message {
+      padding: 10px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .error {
+      background: #ffeaea;
+      color: var(--error);
+      border: 1px solid #f5b7b1;
+    }
+
+    .success {
+      background: #d5f5e3;
+      color: var(--success);
+      border: 1px solid #a3e4d7;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        border-radius: 18px;
+      }
+
+      .tabs {
+        margin: 16px 24px;
+      }
+
+      .forms {
+        padding: 0 24px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Animated Background Shapes -->
+  <div class="bg-shapes">
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+    <div class="shape"></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <h1>Data Hoteling</h1>
+      <p>مدیریت هوشمند داده‌های شما</p>
     </div>
-    <!-- partial:index.partial.html -->
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="wrapper">
 
-        <div class="form-container">
-          <div class="slide-controls">
-            <input type="radio" name="slide" id="login" checked>
-            <input type="radio" name="slide" id="signup">
-            <label for="login" class="slide login">ورود</label>
-            <label for="signup" class="slide signup">ثبت نام</label>
-            <div class="slider-tab"></div>
-          </div>
-          <div class="form-inner">
-            <form action="./login/services.html" target="_blank" class="login"
-              style="display: flex; flex-direction: column; row-gap: 35px;
-           margin-top: 40px;">
-              <div class="field" style="position: relative;">
-                <input type="text" placeholder
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color: rgb(49, 48, 48); pointer-events: none; ">نام
-                  کاربری</label>
+    <div class="tabs">
+      <div class="tab active" data-tab="login">ورود</div>
+      <div class="tab" data-tab="signup">ثبت‌نام</div>
+      <div class="indicator"></div>
+    </div>
 
-              </div>
-              <div class="field" style=" position: relative;">
-                <input type="password" placeholder required
-                  style="width: 100%; height: 43px;
-              padding-right: 15px">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">پسورد
-                </label>
-              </div>
-              <div class="pass-link"><a href="#"
-                  style="color: rgb(20, 26, 58); text-decoration: none;">فراموشی
-                  رمز عبور</a></div>
-              <div class="field btn" style="margin-top:130px;">
-                <div class="btn-layer"></div>
-                <input type="submit" value="ورود">
-              </div>
-            </form>
-            <form action="#" class="signup"
-              style="display: flex; flex-direction: column; row-gap: 40px; justify-content: center;  margin-top: 30px; ">
-              <div class="field" style=" position: relative;">
-                <input type="text" placeholder=" " required
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">نام
-                  کابری: </label>
+    <div id="msg"></div>
 
-              </div>
-              <div class="field" style="position: relative;">
-                <input type="password" placeholder required
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">پسورد:
-                </label>
-
-              </div>
-              <div class="field" style="position: relative;">
-                <input type="password" placeholder
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">تکرار
-                  پسورد:</label>
-
-              </div>
-              <div class="field" style=" position: relative;">
-                <input type="password" placeholder
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">شماره
-                  تماس:</label>
-
-              </div>
-              <div class="field" style=" position: relative;">
-                <input type="email" placeholder
-                  style="width: 100%;height: 43px; padding-right: 15px;">
-                <label for class="label"
-                  style="position: absolute; right: 30px; margin-top: 9px; color:rgb(49, 48, 48); pointer-events: none;">ایمیل:</label>
-
-              </div>
-              <div class="field btn">
-                <div class="btn-layer"></div>
-                <input type="submit" value="ثبت">
-              </div>
-            </form>
-          </div>
+    <div class="forms">
+      <!-- Login -->
+      <form id="loginForm" class="active" novalidate>
+        <div class="field">
+          <input type="text" id="loginEmail" placeholder=" " required>
+          <label>ایمیل، نام کاربری یا شماره موبایل</label>
+          <i class="fas fa-user"></i>
         </div>
-      </div>
+        <div class="field">
+          <input type="password" id="loginPass" placeholder=" " required>
+          <label>رمز عبور</label>
+          <i class="fas fa-eye password-toggle" onclick="togglePass('loginPass', this)"></i>
+        </div>
+        <div class="submit"><button type="submit">ورود</button></div>
+      </form>
+
+      <!-- Signup -->
+      <form id="signupForm" novalidate>
+        <div class="field">
+          <input type="text" id="fullName" placeholder=" " required>
+          <label>نام و نام خانوادگی</label>
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="field">
+          <input type="text" id="username" placeholder=" " required>
+          <label>نام کاربری</label>
+          <i class="fas fa-at"></i>
+        </div>
+        <div class="field">
+          <input type="email" id="email" placeholder=" " required>
+          <label>ایمیل</label>
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="field">
+          <input type="tel" id="phone" placeholder=" " pattern="[0-9]{11}" required>
+          <label>شماره تماس (۱۱ رقم)</label>
+          <i class="fas fa-phone"></i>
+        </div>
+        <div class="field">
+          <input type="password" id="pass" placeholder=" " required>
+          <label>رمز عبور</label>
+          <i class="fas fa-eye password-toggle" onclick="togglePass('pass', this)"></i>
+        </div>
+        <div class="field">
+          <input type="password" id="confirmPass" placeholder=" " required>
+          <label>تکرار رمز عبور</label>
+          <i class="fas fa-eye password-toggle" onclick="togglePass('confirmPass', this)"></i>
+        </div>
+        <div class="submit"><button type="submit">ثبت‌نام</button></div>
+      </form>
     </div>
-    <!-- partial -->
-    <script src="assets/js/script.json"> </script>
-  </body>
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll('.tab');
+    const forms = document.querySelectorAll('form');
+    const msg = document.getElementById('msg');
+
+    // تب‌ها
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        forms.forEach(f => f.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab + 'Form').classList.add('active');
+      });
+    });
+
+    // نمایش پیام
+    function showMessage(text, type) {
+      msg.innerHTML = `<div class="message ${type}">${text}</div>`;
+      setTimeout(() => msg.innerHTML = '', 5000);
+    }
+
+    // نمایش/مخفی کردن رمز عبور
+    function togglePass(id, icon) {
+      const input = document.getElementById(id);
+      input.type = input.type === 'password' ? 'text' : 'password';
+      icon.classList.toggle('fa-eye');
+      icon.classList.toggle('fa-eye-slash');
+    }
+
+    // اعتبارسنجی ایمیل
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    // اعتبارسنجی شماره موبایل
+    function isValidPhone(phone) {
+      return /^09[0-9]{9}$/.test(phone);
+    }
+
+    // تبدیل به حروف کوچک برای مقایسه
+    function toLower(str) {
+      return str.toLowerCase();
+    }
+
+    // ثبت‌نام
+    const signupForm = document.getElementById('signupForm');
+    signupForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const fullName = document.getElementById('fullName').value.trim();
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const pass = document.getElementById('pass').value;
+      const confirmPass = document.getElementById('confirmPass').value;
+
+      if (!fullName || !username || !email || !phone || !pass) {
+        return showMessage('همه فیلدها الزامی هستند', 'error');
+      }
+
+      if (!isValidEmail(email)) {
+        return showMessage('ایمیل معتبر نیست', 'error');
+      }
+
+      if (!isValidPhone(phone)) {
+        return showMessage('شماره موبایل باید ۱۱ رقم و با ۰۹ شروع شود', 'error');
+      }
+
+      if (pass.length < 6) {
+        return showMessage('رمز عبور باید حداقل ۶ کاراکتر باشد', 'error');
+      }
+
+      if (pass !== confirmPass) {
+        return showMessage('رمزهای عبور مطابقت ندارند', 'error');
+      }
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const lowerEmail = toLower(email);
+      const lowerUsername = toLower(username);
+
+      const exists = users.some(u =>
+        toLower(u.email) === lowerEmail ||
+        toLower(u.username) === lowerUsername
+      );
+
+      if (exists) {
+        return showMessage('نام کاربری یا ایمیل قبلاً ثبت شده است', 'error');
+      }
+
+      const newUser = { fullName, username, email, phone, password: pass };
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      showMessage(`ثبت‌نام موفق بود، ${fullName} عزیز!`, 'success');
+      signupForm.reset();
+      document.querySelectorAll('.field input').forEach(input => input.classList.remove('not-empty'));
+
+      setTimeout(() => {
+        document.querySelector('[data-tab="login"]').click();
+      }, 1500);
+    });
+
+    // ورود
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const loginInput = document.getElementById('loginEmail').value.trim();
+      const password = document.getElementById('loginPass').value;
+
+      if (!loginInput || !password) {
+        return showMessage('ورودی و رمز عبور الزامی است', 'error');
+      }
+
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      const lowerInput = toLower(loginInput);
+
+      const user = users.find(u => {
+        const isEmailMatch = toLower(u.email) === lowerInput;
+        const isUsernameMatch = toLower(u.username) === lowerInput;
+        const isPhoneMatch = u.phone === loginInput;
+        return (isEmailMatch || isUsernameMatch || isPhoneMatch) && u.password === password;
+      });
+
+      if (!user) {
+        return showMessage('اطلاعات ورود اشتباه است', 'error');
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      showMessage(`خوش آمدید، ${user.fullName}!`, 'success');
+
+      setTimeout(() => {
+        window.location.href = '../login/services.html';
+      }, 1500);
+    });
+
+    // مدیریت لیبل‌ها
+    document.querySelectorAll('.field input').forEach(input => {
+      input.addEventListener('input', () => {
+        input.classList.toggle('not-empty', input.value.trim() !== '');
+      });
+      if (input.value) input.classList.add('not-empty');
+    });
+  </script>
+</body>
 
 </html>
