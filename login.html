@@ -14,15 +14,18 @@
       --secondary: #5dc2d9;
       --dark: #0f3360;
       --light: #f4f4f9;
-      --card-bg: rgba(255, 255, 255, 0.96);
-      --border: #d0d0d0;
-      --focus: 0 0 0 3px rgba(93, 194, 217, 0.3);
+      --card-bg: rgba(255, 255, 255, 0.15);
+      --input-bg: rgba(255, 255, 255, 0.2);
+      --input-bg-focus: rgba(255, 255, 255, 0.3);
+      --border: rgba(255, 255, 255, 0.3);
+      --focus: 0 0 0 4px rgba(93, 194, 217, 0.3);
       --error: #e74c3c;
       --success: #27ae60;
-      --text: #2d3748;
-      --muted: #718096;
-      --tab-bg: #e2e8f0;
-      --tab-active: white;
+      --text: #ffffff;
+      --muted: rgba(255, 255, 255, 0.75);
+      --label-active: #5dc2d9;
+      --tab-bg: rgba(255, 255, 255, 0.15);
+      --tab-active: #ffffff;
     }
 
     @font-face {
@@ -40,16 +43,8 @@
 
     body {
       font-family: 'Vazirmatn', kolo, sans-serif;
-      background: linear-gradient(135deg,
-          #0f3360 0%,
-          #5dc2d9 15%,
-          #3050a9 35%,
-          #0f3360 50%,
-          #3a717d 70%,
-          #5a898c 85%,
-          #70b2de 100%);
-      min-height: 100vh;
-      overflow-x: hidden;
+      background: linear-gradient(to right, #2c7282, #4e8293, #76a6ae, #e1eff9);
+      min-height: 100dvh;
       direction: rtl;
       display: flex;
       align-items: center;
@@ -57,99 +52,169 @@
       padding: 16px;
       color: var(--text);
       position: relative;
+      overflow-x: hidden;
+      overflow-y: auto;
+      /* اسکرول عمودی همیشه فعال */
     }
 
-    /* Animated background shapes */
-    .bg-shapes {
-      position: fixed;
+    /* فقط وقتی منو باز باشه، اسکرول قفل بشه */
+    .no-scroll {
+      overflow: hidden !important;
+    }
+
+    /* بک‌گراند دایره‌های متحرک */
+    .circles {
+      position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
       overflow: hidden;
+      z-index: 0;
     }
 
-    .shape {
+    .circles>li {
       position: absolute;
-      background: rgba(255, 255, 255, 0.08);
-      animation: float 6s ease-in-out infinite;
-      box-shadow: 0 8px 28px rgba(255, 255, 255, 0.484);
+      display: block;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: #144679;
+      background-image: linear-gradient(225deg, #386593 0%, #144679 50%, #08213a 100%);
+      animation: animate 25s linear infinite;
+      bottom: -150px;
+      border-radius: 0;
     }
 
-    .shape:nth-child(1) {
-      width: 120px;
-      height: 80px;
-      border-radius: 15px;
-      top: 20%;
-      left: 10%;
-      animation-delay: 0s;
-      transform: rotate(15deg);
-    }
-
-    .shape:nth-child(2) {
-      width: 90px;
-      height: 140px;
-      border-radius: 12px;
-      top: 60%;
-      right: 15%;
-      animation-delay: 2s;
-      transform: rotate(-20deg);
-    }
-
-    .shape:nth-child(3) {
-      width: 100px;
-      height: 60px;
-      border-radius: 10px;
-      bottom: 20%;
-      left: 20%;
-      animation-delay: 4s;
-      transform: rotate(25deg);
-    }
-
-    .shape:nth-child(4) {
+    .circles>li:nth-child(1) {
+      left: 25%;
       width: 80px;
-      height: 120px;
-      border-radius: 8px;
-      top: 10%;
-      right: 30%;
-      animation-delay: 1s;
-      transform: rotate(-10deg);
+      height: 80px;
+      animation-delay: 0s;
     }
 
-    .shape:nth-child(5) {
+    .circles>li:nth-child(2) {
+      left: 10%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 2s;
+      animation-duration: 15s;
+    }
+
+    .circles>li:nth-child(3) {
+      left: 70%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 4s;
+    }
+
+    .circles>li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      animation-delay: 0s;
+      animation-duration: 20s;
+    }
+
+    .circles>li:nth-child(5) {
+      left: 65%;
+      width: 20px;
+      height: 20px;
+      animation-delay: 0s;
+    }
+
+    .circles>li:nth-child(6) {
+      left: 75%;
       width: 110px;
-      height: 70px;
-      border-radius: 14px;
-      bottom: 40%;
-      right: 20%;
+      height: 110px;
       animation-delay: 3s;
-      transform: rotate(30deg);
     }
 
-    .shape:nth-child(6) {
-      width: 95px;
-      height: 95px;
-      border-radius: 20px;
-      top: 40%;
-      left: 5%;
+    .circles>li:nth-child(7) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 7s;
+    }
+
+    .circles>li:nth-child(8) {
+      left: 50%;
+      width: 25px;
+      height: 25px;
+      animation-delay: 15s;
+      animation-duration: 50s;
+    }
+
+    .circles>li:nth-child(9) {
+      left: 20%;
+      width: 15px;
+      height: 15px;
+      animation-delay: 2s;
+      animation-duration: 40s;
+    }
+
+    .circles>li:nth-child(10) {
+      left: 85%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 0s;
+      animation-duration: 20s;
+    }
+
+    .circles>li:nth-child(11) {
+      left: 75%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 1s;
+      animation-duration: 30s;
+    }
+
+    .circles>li:nth-child(12) {
+      left: 45%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 3s;
+      animation-duration: 20s;
+    }
+
+    .circles>li:nth-child(13) {
+      left: 35%;
+      width: 150px;
+      height: 150px;
       animation-delay: 5s;
-      transform: rotate(-15deg);
+      animation-duration: 26s;
     }
 
-    @keyframes float {
+    .circles>li:nth-child(14) {
+      left: 25%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 8s;
+      animation-duration: 25s;
+    }
 
-      0%,
+    .circles>li:nth-child(15) {
+      left: 15%;
+      width: 150px;
+      height: 150px;
+      animation-delay: 4s;
+      animation-duration: 15s;
+    }
+
+    @keyframes animate {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+      }
+
       100% {
-        transform: translateY(0px) rotate(var(--start-rotation, 0deg));
-      }
-
-      50% {
-        transform: translateY(-20px) rotate(calc(var(--start-rotation, 0deg) + 180deg));
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
       }
     }
 
-    /* Scrollbar */
     ::-webkit-scrollbar {
       width: 2px;
     }
@@ -167,7 +232,7 @@
       background-color: rgba(60, 251, 251, 0.8);
     }
 
-    /* Card */
+    /* کارت شیشه‌ای */
     .card {
       width: 100%;
       max-width: 460px;
@@ -175,7 +240,8 @@
       border-radius: 24px;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      backdrop-filter: blur(16px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       border: 1px solid rgba(255, 255, 255, 0.2);
       position: relative;
       z-index: 1;
@@ -189,20 +255,16 @@
     .card-header h1 {
       font-size: 2rem;
       font-weight: 700;
-      background: linear-gradient(90deg, var(--primary), var(--secondary));
-      background-clip: text;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      color: transparent;
+      color: #0f3360ff;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
 
     .card-header p {
       color: var(--muted);
       margin-top: 6px;
+      font-weight: 500;
     }
 
-    /* Tabs */
     .tabs {
       margin: 24px 32px 16px;
       display: flex;
@@ -210,7 +272,9 @@
       border-radius: 16px;
       overflow: hidden;
       position: relative;
-      border: 1px solid #cbd5e0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .tab {
@@ -221,7 +285,7 @@
       font-weight: 600;
       z-index: 2;
       position: relative;
-      color: var(--text);
+      color: rgba(255, 255, 255, 0.85);
       transition: color 0.3s ease;
     }
 
@@ -246,7 +310,6 @@
       right: calc(50% + 6px);
     }
 
-    /* Forms */
     .forms {
       padding: 0 32px 32px;
     }
@@ -274,6 +337,7 @@
       }
     }
 
+    /* فیلدهای ورودی */
     .field {
       position: relative;
       height: 58px;
@@ -283,18 +347,26 @@
       width: 100%;
       height: 100%;
       padding: 16px 50px 0 16px;
-      border: 2px solid var(--border);
+      border: 1.5px solid var(--border);
       border-radius: 14px;
-      background: var(--light);
+      background: var(--input-bg);
       font-size: 1rem;
       text-align: right;
+      color: #0f3360ff;
       transition: all 0.3s ease;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .field input::placeholder {
+      color: transparent;
     }
 
     .field input:focus {
-      border-color: var(--primary);
+      border-color: #0f3360ff;
+      background: var(--input-bg-focus);
       box-shadow: var(--focus);
-      background: white;
+      outline: none;
     }
 
     .field label {
@@ -306,16 +378,17 @@
       font-size: 0.95rem;
       transition: all 0.3s ease;
       pointer-events: none;
-      background: var(--card-bg);
       padding: 0 6px;
+      font-weight: 500;
     }
 
     .field input:focus+label,
     .field input:not(:placeholder-shown)+label {
       top: 10px;
       font-size: 0.75rem;
-      color: var(--primary);
+      color: #0f3360ff;
       font-weight: 600;
+      background: transparent;
     }
 
     .field i {
@@ -323,7 +396,12 @@
       left: 16px;
       top: 50%;
       transform: translateY(-50%);
-      color: var(--muted);
+      color: rgba(255, 255, 255, 0.7);
+      transition: color 0.3s ease;
+    }
+
+    .field input:focus~i {
+      color: #0f3360ff;
     }
 
     .password-toggle {
@@ -331,13 +409,13 @@
     }
 
     .password-toggle:hover {
-      color: var(--primary);
+      color: #0f3360ff;
     }
 
     .submit button {
       width: 100%;
       height: 58px;
-      background: linear-gradient(90deg, var(--primary), #4a68b5);
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
       color: white;
       font-weight: 700;
       border: none;
@@ -347,6 +425,7 @@
       box-shadow: 0 6px 20px rgba(48, 80, 169, 0.3);
       overflow: hidden;
       position: relative;
+      font-size: 1.1rem;
     }
 
     .submit button::before {
@@ -356,7 +435,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
       transition: 0.6s;
     }
 
@@ -366,6 +445,7 @@
 
     .submit button:hover {
       transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(48, 80, 169, 0.4);
     }
 
     #msg {
@@ -379,46 +459,124 @@
       border-radius: 10px;
       font-size: 0.9rem;
       animation: fadeIn 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
     .error {
-      background: #ffeaea;
-      color: var(--error);
-      border: 1px solid #f5b7b1;
+      background: rgba(231, 76, 60, 0.2);
+      color: #ff6b6b;
     }
 
     .success {
-      background: #d5f5e3;
-      color: var(--success);
-      border: 1px solid #a3e4d7;
+      background: rgba(39, 174, 96, 0.2);
+      color: #90ee90;
     }
 
+    /* ریسپانسیو موبایل */
     @media (max-width: 480px) {
+      body {
+        padding: 8px;
+        min-height: 100dvh;
+      }
+
       .card {
-        border-radius: 18px;
+        max-width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-header {
+        padding: 24px 20px 0;
+      }
+
+      .card-header h1 {
+        font-size: 1.6rem;
+      }
+
+      .card-header p {
+        font-size: 0.9rem;
       }
 
       .tabs {
-        margin: 16px 24px;
+        margin: 16px 20px;
+        border-radius: 12px;
+      }
+
+      .tab {
+        padding: 12px 0;
+        font-size: 0.95rem;
       }
 
       .forms {
-        padding: 0 24px 24px;
+        padding: 0 20px 24px;
+      }
+
+      .field {
+        height: 54px;
+      }
+
+      .field input {
+        padding: 14px 48px 0 14px;
+        font-size: 0.95rem;
+      }
+
+      .field label {
+        font-size: 0.9rem;
+        right: 14px;
+      }
+
+      .field input:focus+label,
+      .field input:not(:placeholder-shown)+label {
+        top: 8px;
+        font-size: 0.7rem;
+      }
+
+      .submit button {
+        height: 52px;
+        font-size: 1rem;
+      }
+
+      /* دایره‌های پس‌زمینه در موبایل */
+      .circles>li {
+        width: 15px !important;
+        height: 15px !important;
+        animation-duration: 30s !important;
+      }
+
+      .circles>li:nth-child(odd) {
+        width: 30px !important;
+        height: 30px !important;
+      }
+
+      .circles>li:nth-child(even) {
+        width: 20px !important;
+        height: 20px !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <!-- Animated Background Shapes -->
-  <div class="bg-shapes">
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-    <div class="shape"></div>
-  </div>
+
+  <ul class="circles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
 
   <div class="card">
     <div class="card-header">
@@ -435,7 +593,7 @@
     <div id="msg"></div>
 
     <div class="forms">
-      <!-- Login -->
+      <!-- فرم ورود -->
       <form id="loginForm" class="active" novalidate>
         <div class="field">
           <input type="text" id="loginEmail" placeholder=" " required>
@@ -450,7 +608,7 @@
         <div class="submit"><button type="submit">ورود</button></div>
       </form>
 
-      <!-- Signup -->
+      <!-- فرم ثبت‌نام -->
       <form id="signupForm" novalidate>
         <div class="field">
           <input type="text" id="fullName" placeholder=" " required>
@@ -488,11 +646,11 @@
   </div>
 
   <script>
+    // تب‌ها و فرم‌ها
     const tabs = document.querySelectorAll('.tab');
     const forms = document.querySelectorAll('form');
     const msg = document.getElementById('msg');
 
-    // تب‌ها
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
@@ -502,13 +660,11 @@
       });
     });
 
-    // نمایش پیام
     function showMessage(text, type) {
       msg.innerHTML = `<div class="message ${type}">${text}</div>`;
       setTimeout(() => msg.innerHTML = '', 5000);
     }
 
-    // نمایش/مخفی کردن رمز عبور
     function togglePass(id, icon) {
       const input = document.getElementById(id);
       input.type = input.type === 'password' ? 'text' : 'password';
@@ -516,17 +672,14 @@
       icon.classList.toggle('fa-eye-slash');
     }
 
-    // اعتبارسنجی ایمیل
     function isValidEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
-    // اعتبارسنجی شماره موبایل
     function isValidPhone(phone) {
       return /^09[0-9]{9}$/.test(phone);
     }
 
-    // تبدیل به حروف کوچک برای مقایسه
     function toLower(str) {
       return str.toLowerCase();
     }
@@ -623,13 +776,29 @@
       }, 1500);
     });
 
-    // مدیریت لیبل‌ها
+    // لیبل‌ها
     document.querySelectorAll('.field input').forEach(input => {
       input.addEventListener('input', () => {
         input.classList.toggle('not-empty', input.value.trim() !== '');
       });
       if (input.value) input.classList.add('not-empty');
     });
+
+    // --- مدیریت اسکرول در موبایل (درست شده) ---
+    const body = document.body;
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+
+    const handleScroll = () => {
+      if (hamburgerMenu && hamburgerMenu.classList.contains('active')) {
+        body.classList.add('no-scroll');
+      } else {
+        body.classList.remove('no-scroll');
+      }
+    };
+
+    window.addEventListener('resize', handleScroll);
+    window.addEventListener('load', handleScroll);
+    handleScroll();
   </script>
 </body>
 
