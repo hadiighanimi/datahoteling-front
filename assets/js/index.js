@@ -166,9 +166,31 @@ const hoverBtn = (element, size) => {
     .closest(".hamburger__btn--container")
     .querySelector("div").style.width = size === "enter" ? "100%" : "0";
 };
+
+  const logout = ()=>{
+  const loginBtn = document.querySelector('.btn-z a');
+  const currentPath = '/' + window.location.pathname.split('/').pop();
+    const redirect = (url) => {
+      if (window.location.pathname !== url && currentPath !== url) {
+        window.location.replace(url);
+      }
+    };
+    loginBtn.addEventListener('click',(e)=>{
+  
+
+      if (localStorage.getItem("currentUser")){
+        e.preventDefault()
+        redirect("./login/services.html")
+      }
+    })
+   
+}
+
+
 const load = () => {
   handleScroll();
   highlightCurrentPage();
+  logout()
 };
 const resize = () => {
   handleScroll();
@@ -205,6 +227,14 @@ lis.forEach((li) => {
   });
 });
 /* end menuHover */
+
+// 
+
+    
+    
+    
+ 
+
 
 /**
  * Toggle mobile nav dropdowns

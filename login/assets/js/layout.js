@@ -115,6 +115,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  function logout() {
+    const logoutBtn = document.querySelector('.logout');
+    const currentPath = '/' + window.location.pathname.split('/').pop();
+    const redirect = (url) => {
+      if (window.location.pathname !== url && currentPath !== url) {
+        window.location.replace(url);
+      }
+    };
+    logoutBtn.addEventListener('click', () => {
+      localStorage.removeItem("currentUser")
+      redirect('/index.html');
+    })
+  }
+
+
+
   // اجرای بارگذاری Navbar و Sidebar برای همه صفحات
   Promise.all([
     loadComponent("nav-bar-placeholder", "components/navbar.html"),
@@ -123,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(() => {
       highlightCurrentPage();
       initializeEvents();
+      logout()
     })
     .catch((error) => {
       console.error(error);
