@@ -46,11 +46,18 @@
 
 /* END OF Global Variables (Color Palette) */
 
+@font-face {
+  font-family: Vazir;
+  src: url('/assets/font/vazirmatn/Vazir-FD-WOL.ttf') format('truetype');
+  font-weight: normal;
+}
+
 html {
   background-color: var(--text-dark);
 }
 
 * {
+  font-family: 'Vazir', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -388,6 +395,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
+  width: 92%;
 }
 
 .sidebar-menu a i,
@@ -397,7 +405,6 @@ body {
   transition: color 0.2s;
 }
 
-.sidebar-menu a:hover,
 .dropdown-toggle:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: var(--text-light);
